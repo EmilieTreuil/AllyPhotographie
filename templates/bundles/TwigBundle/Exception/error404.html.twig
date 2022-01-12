@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{parent}}{% endblock %}
+
+{% block body %}
+<section class="container">
+    <div class="row">
+        <div class="col-md12 mx-auto" style="width: 565px;">
+            
+                <h2 class="text-center">Page non trouvée</h2>
+                <p style="text-align: center;">
+                    La page que vous cherchez n'a pas été trouvée. Veuillez retourner à <a href="{{ path('index') }}">la page d'accueil</a>.
+                </p>
+
+
+        </div>
+    </div>
+</section>
+{% endblock %}

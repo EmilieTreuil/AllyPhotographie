@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent }}{% endblock %}
+
+{% block body %}
+<section class="container">
+    <div class="row">    
+        {% set route_name = app.request.attributes.get('_route') %}
+        <a href="{{ path('galerie') }}" class="btn-gallery" style="margin-left: 15px">Tout</a>
+            {% for uniqueCategory in listeCategory %}
+                <a href="{{ path('galerie_custom', {'nameCategory': uniqueCategory.name}) }}" class="btn-gallery">{{ uniqueCategory.name }}</a>
+            {% endfor %}
+    </div>
+</section>
+
+<section class="container mt-3">
+    <div class="fg-gallery">        
+        {% for picture in listePicture %}
+                <img src="../assets/img/pictures/{{ picture.picture }}" loading="lazy" class="img-gallery" alt="{{ picture.name }}">
+        {% endfor %}
+    </div>    
+</section>
+
+{# JS GALLERY #}
+<script src="../assets/js/gallery.js"></script>
+
+<script>
+    var myGallery = new FgGallery('.fg-gallery', {
+    cols: 4,
+    style: {
+      width: '250px',
+      height: '300px',
+    }
+})
+</script>
+
+
+{% endblock %}

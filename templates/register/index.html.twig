@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{parent}}{% endblock %}
+
+{% block body %}
+<section class="container">
+    <div class="row">
+        <div class="col-md12 mx-auto" style="width: 565px;">
+            
+                <h2 class="text-center">Inscription Administrateurs</h2>
+                {{ form(formRegister) }}
+
+
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent }} {% endblock %}
+
+{% block body %}
+
+<section class="container">
+  <div class="row">
+    <a href="{{ path('admin_form_picture') }}" class="btn btn-dark mb-3">Ajouter une image</a>
+    <table class="table table-bordered text-center">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">N°ID</th>
+            <th scope="col">Preview</th>
+            <th scope="col">Name</th>
+            <th scope="col">File Name</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for picture in listePicture %}
+                <tr>
+                    <th scope="row" class="align-middle">{{ picture.id }}</th>
+                    <td  class="align-middle"><img src="../assets/img/pictures/{{ picture.picture }}" style="width: 50px" alt=""></td>
+                    <td class="align-middle">{{ picture.name }}</td>
+                    <td class="align-middle">{{ picture.picture }}</td>
+                    <td>
+                      <a href="{{ path('admin_form_update', {'idPicture': picture.id}) }}" class="btn btn-dark mb-3 align-middle">Modifier</a>
+                      <a href="{{ path('admin_form_delete', {'idPicture': picture.id}) }}" class="btn btn-dark mb-3 align-middle">Supprimer</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+  </div>
+</section>
+
+  
+
+
+
+{% endblock %}
+

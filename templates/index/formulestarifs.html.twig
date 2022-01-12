@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent }}{% endblock %}
+
+{% block body %}
+<section class="container">
+    <div class="row">
+        
+        <div class="col-md-12 col-sm-12">
+            <h2 class="text-center">Prestations</h2>
+            <h3>Services fournis :</h3>
+            <p>Photos <span class="word-important">illimitées</span> durant la séance.</p>
+            <p>Discussion du projet par <span class="word-important">email, téléphone</span> ou sur <span class="word-important">rendez-vous.</span></p>
+            <p>Séance photo réalisée dans <span class="word-important">la joie et la bonne humeur !</span></p>
+            <p>Une fois la séance terminée, je travaille en <span class="word-important">post production</span> les photos.</p>
+            <p>Environ <span class="word-important">une semaine après la séance photo</span>, vous pourrez récuperer les photos en <span class="word-important">haute définition (qualité HD)</span> par l'intermédiaire d'un lien <span class="word-important">Wetransfert</span>.</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="container mt-5">
+    <div class="row">
+
+        <p class="col-md-12 col-12 text-center mb-2">Découvrez mes différentes formules pour vos shootings.</p>
+        <p class="col-md-12 col-12 text-center mb-4">Et n'hésitez pas à prendre <a href="{{ path('contact') }}" class="contact-link">contact</a> pour toutes demandes particulières.</p>
+
+        {% for prestation in listePrestation %}
+        <div class="col-lg-4 col-6">
+            <div class="item-block">
+                <div class="title">
+                    <h3>{{ prestation.title }}</h3>
+                </div>
+                <div class="item-list">
+                    <ul>
+                        <li>{{ prestation.hour }}</li>
+                        <li>{{ prestation.place }}</li>
+                        <li>{{ prestation.picturenumber }} Photos</li>
+                    </ul>
+                </div>
+                <div class="space-item"></div>
+                <div class="price">
+                    <p>{{ prestation.price }} €</p>
+                </div>
+                <div class="text-center contact-pad">
+                    <a href="{{ path('contact') }}" class="btn-custom">Contact</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</section>
+
+{% endblock %}

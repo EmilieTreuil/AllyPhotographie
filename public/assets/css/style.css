@@ -1,0 +1,262 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent; 
+}
+
+body {
+    background-color: var(--light);
+    font-family: 'Archivo', sans-serif;
+    color: var(--dark);
+}
+
+/* SPACE */
+.space {
+    margin-top: 120px;
+}
+
+/* TITLES */
+
+h2, h1 {
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-size: 64px;
+    color: var(--rouge);
+}
+
+h3 {
+    color: var(--rouge);
+    font-size: 45px;
+    font-family: 'Mrs Saint Delafield', cursive;
+}
+
+.title-head {
+    text-align: center;
+}
+
+/* PARAGRAPHS */
+
+p {
+    margin-bottom: 16px;
+}
+
+.para-footer {
+    margin-bottom: 5px !important;
+}
+
+.word-important {
+    color: var(--rouge);
+}
+
+
+/* RESET */
+ul, li {
+    list-style: none !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* COLORS */
+:root {
+    --dark : #363636;
+    --light: #f7f7f7;
+    --rouge: #e87d38;
+    --sable : #f0e5d7;
+}
+
+/* LINKS */
+
+a {
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 400;
+    transition: 0.2s;
+}
+
+a:hover, nav button:hover {
+    color: var(--rouge);
+}
+
+/* NAV BAR */
+
+nav a, .text-nav {
+    font-size: 25px;
+    color: var(--dark);
+    line-height: 50px;
+    
+}
+
+nav button {
+    background-color: transparent;
+    border: none;
+}
+
+nav img {
+    margin-top: -30px !important;
+}
+
+.current a, .current button {
+    color: var(--rouge);
+
+}
+
+.no-current {
+    color: var(--dark) !important;
+}
+
+.dark {
+    color: var(--dark);
+    border: none;
+    padding: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.show-logo {
+    display: block;
+}
+
+@media screen and (min-width:992px) {
+    .hidden {
+        display: block;
+        z-index: 3;
+    }
+
+    .show-logo {
+        display: none;
+    }
+
+    nav a, .text-nav {
+        font-size: 18px;
+        line-height: 25px;
+    }
+}
+
+/* BUTTON */
+
+.btn-custom {
+    border: var(--dark) 1px solid;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: var(--dark);
+    font-size: 18px;
+    transition: 0.2s;
+}
+
+.btn-custom:hover {
+    background-color: var(--rouge);
+    border: var(--rouge) 1px solid;
+    color: var(--light);
+}
+
+/* SMALL CONTAINER */
+
+.small-container {
+    margin-left: 10em;
+    margin-right: 10em;
+}
+
+/* GALLERY */
+
+.btn-gallery {
+    margin-right: 10px;
+    font-size: 18px;
+}
+
+/* PRESTATIONS */
+
+.item-block {
+    border: 2px solid var(--sable);
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.title {
+    background-color: var(--sable);
+    text-align: center;
+    padding: 15px;
+    transition: 0.3s;
+}
+
+.title h3{
+    color: var(--dark);
+    font-family: 'Archivo', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.item-list{
+    padding: 0px 75px;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.price {
+    color: var(--rouge);
+    text-align: center;
+    margin-top: 15px;
+    font-size: 26px;
+}
+
+.space-item {
+    border-bottom: 1px solid var(--dark);
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.contact-pad {
+    padding-bottom: 25px;
+}
+
+.contact-link {
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--sable);
+    height: 10em;
+    padding-top: 30px;
+    padding-bottom: 30px;;
+}
+
+.title-footer {
+    color: var(--dark);
+    margin-bottom: -20px;
+}
+
+.link-footer {
+    text-decoration: underline;
+    font-size: 15px;
+}
+
+.link-footer:hover {
+    text-decoration: underline;
+}
+
+/* CONTACT */
+
+.important {
+    color: var(--rouge);
+    font-family: 'Mrs Saint Delafield', cursive;
+    font-size: 45px; 
+}
+
+.p-title {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+

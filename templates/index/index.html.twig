@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent }} {% endblock %}
+
+{% block body %}
+
+<section class="container">
+    <div class="row">
+        <h1 class="col-md-12 col-12 col-lg-12 text-center"> Photographe professionnelle basée sur Paris</h1>
+        <img src="../assets/img/banniere.webp" alt="forêt avec coucher de soleil" class="col-md-12">
+        <img src="../assets/img/ally.webp" alt="photo de la photographe Ally Potter" class="col-lg-6 col-12 mt-4 img-fluid">
+        <div class="col-lg-6 col-12 mt-4 align-self-center text-center">
+            <h2>A mon propos</h2>
+            <p>
+                Je m'appelle Ally Potter, photographe professionnelle de 25 ans basée à Paris. Je suis spécialisée dans l'animalier, les paysages et le lifestyle.
+            </p>
+            <p>
+                Je propose des shootings portraits et animalier pour les particuliers et les professionnels ! 
+            </p>
+            <h3 class="mt-5 mb-2"> Mon Objectif ? </h3>
+            <p class="mb-4">                
+                Que toutes vos photos vous ressemblent tout en y ajoutant mon univers coloré ! N’hésitez pas à venir me parler de votre projet par mail ou en message privé sur Instagram.
+            </p>
+            <a href="{{ path('galerie') }}" class="btn-custom">Galerie</a>
+        </div>
+        <div class="col-md-12 text-center space mb-5">
+            <h2>Envie d'un shooting ?</h2>
+            <p class="mb-4 small-container">Si vous avez besoin d'un shooting, que ce soit pour des photos personnelles ou pour votre entreprise je suis à votre disposition. Vous pouvez me contacter via le formulaire ou via mon compte Instagram.</p>
+            <a href="{{ path('contact') }}" class="btn-custom">Contact</a>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

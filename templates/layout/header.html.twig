@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="assets/img/logo-fav.webp" />
+        <title>{% block title %} Ally Photographie {% endblock %}</title>
+        {# Run `composer require symfony/webpack-encore-bundle`
+           and uncomment the following Encore helpers to start using Symfony UX #}
+
+        <!-- REFERENCEMENT -->
+        <meta content="Photographe professionnelle basée à Paris, spécialisée dans le portrait, l'animalier et le lifestyle. Je propose des shootings pour les particuliers et les professionnels ! Mon objectif ? Que toutes vos photos vous ressemblent tout en y ajoutant mon univers coloré !" name="description">
+        <meta name="robots" content="follow"/>
+
+        {# CSS BOOTSTRAP #}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+        {# CSS #}
+        <link rel="stylesheet" href="/assets/css/style.css" crossorigin="anonymous">
+        <link rel="stylesheet" href="/assets/css/gallery.css" crossorigin="anonymous">
+        {% block stylesheets %}
+
+        {# FONT GOOGLE #}
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&display=swap" rel="stylesheet">
+            {# {{ encore_entry_link_tags('app') }} #}
+        {% endblock %}
+
+        {% block javascripts %}
+            {# {{ encore_entry_script_tags('app') }} #}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% set route_name = app.request.attributes.get('_route') %}
+
+        <div class="show-logo text-center">
+            <a href="{{ path('index') }}"><img src="/assets/img/logo.webp" class="img-fluid" alt="Logo d'Ally Photographie"></a>
+        </div>
+
+        <nav class="container mt-5 navbar-expand-lg navbar-light">
+            <button class="navbar-toggler dark" type="button" data-toggle="collapse" data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="row align-items-center text-center">
+                <div class="collapse navbar-collapse" id="navbarScroll">
+                    <li class="col-lg-2{% if route_name == 'galerie' %} current {% endif %}"><a href="{{ path('galerie') }}">Galerie</a></li>
+                    <li class="col-lg-2{% if route_name == 'formules_tarifs' %} current {% endif %}"><a href="{{ path('formules_tarifs') }}">Prestations</a></li>
+                    <li class="col-lg-4 hidden"><a href="{{ path('index') }}"><img src="/assets/img/logo.webp" class="img-fluid" alt="Logo d'Ally Photographie"></a></li>
+
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="col-lg-2 dropdown {% if route_name == 'admin_index_admin' %} current {% endif %}">
+                            <button class="dropdown-toggle text-nav" id="dropdownMenuButton" data-toggle="dropdown">Administration</button>
+
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item no-current" href="{{ path('admin_index_admin') }}">Gestion des Photos</a>
+                                <a class="dropdown-item no-current" href="{{ path('admin_index_category') }}">Gestion des Catégories</a>
+                                <a class="dropdown-item no-current" href="{{ path('admin_index_prestation') }}">Gestion des Prestations</a>
+                                <a class="dropdown-item no-current" href="{{ path('app_logout') }}">Déconnexion</a>                            
+                            </div>                        
+                        </li>
+                    {% endif %}
+
+                    <li class="col-lg-2 {% if route_name == 'contact' %} current {% endif %}"><a href="{{ path('contact') }}">Contact</a></li>
+                </div>
+            </ul>           
+        </nav>

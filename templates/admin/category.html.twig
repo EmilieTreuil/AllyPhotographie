@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent }} {% endblock %}
+
+{% block body %}
+
+<section class="container">
+  <div class="row">
+    <a href="{{ path('admin_form_category') }}" class="btn btn-dark mb-3">Ajouter une catégorie</a>
+    <table class="table table-bordered text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">N°ID</th>
+          <th scope="col">Category</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for category in listeCategory %}
+              <tr>
+                  <th scope="row" class="align-middle">{{ category.id }}</th>
+                  <td  class="align-middle">{{ category.name }}</td>
+                  <td><a href="{{ path('admin_form_delete_category', {'idCategory': category.id}) }}" class="btn btn-dark mb-3 align-middle">Supprimer</a></td>
+              </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+{% endblock %}
+

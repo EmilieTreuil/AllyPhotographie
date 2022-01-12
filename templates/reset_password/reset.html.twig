@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{parent}} {% endblock %}
+
+{% block body %}
+
+<section class="container">
+    <div class="row">
+        <div class="col-md12 mx-auto" style="width: 565px;">
+            <h2 class="text-center">Nouveau mot de passe</h2>
+
+            {{ form_start(resetForm) }}
+                {{ form_row(resetForm.plainPassword) }}
+                <button class="btn btn-dark">Envoyer</button>
+            {{ form_end(resetForm) }}
+
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent }}{% endblock %}
+
+{% block body %}
+
+
+<section class="container mt-3">
+    <div class="row">
+        <h2 class="text-center col-lg-12 col-12 col-md-12">Contactez-moi !</h2>
+        <div class="col-lg-12 col-12 col-md-12">
+            <p class="text-center p-title">Je suis disponible <span class="important">dès maintenant </span> pour vos demandes de shooting.</p>
+            <p class="text-center">
+                Pour m'envoyer une demande de devis, vous pouvez me contacter soit par mail via le formulaire ci-joint, soit via <a href="https://www.instagram.com/allypotter.photographie/" class="contact-link">Instagram</a>.
+            </p>
+        </div>
+        <div class="col-md-12 col-lg-6 col-12 mt-3">
+            {# GOOGLE MAP #}
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2614.4005682081315!2d2.341424815858828!3d49.0600200944422!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e643ab9e685835%3A0x7620b4a3d853f542!2s24%20Avenue%20des%20Jonquilles%2C%2095570%20Attainville!5e0!3m2!1sfr!2sfr!4v1621929699775!5m2!1sfr!2sfr" width="500" height="490" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div class="col-md-12 col-lg-6 mx-auto mt-3" style="width: 565px;">
+            {% for message in app.flashes('success') %}
+                <div class="alert alert-success">
+                    {{ message }}
+                </div>
+            {% endfor %}
+            {{ form(form_contact) }}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

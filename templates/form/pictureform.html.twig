@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{parent() }} {% endblock %}
+
+{% block body %}
+
+<section class="container">
+    <div class="row">
+        <div class="col-md12 mx-auto" style="width: 565px;">
+            {% for message in app.flashes('danger') %}
+            <div class="alert alert-danger">
+              {{ message }}
+            </div>
+            {% endfor %}
+            </br>
+            {{ form(form_picture) }}
+        </div>
+    </div>
+</section>
+
+{% endblock %}

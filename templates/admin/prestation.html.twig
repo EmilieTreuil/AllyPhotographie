@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ parent }} {% endblock %}
+
+{% block body %}
+
+<section class="container">
+  <div class="row">
+    <a href="{{ path('admin_form_prestation') }}" class="btn btn-dark mb-3">Ajouter une prestation</a>
+    <table class="table table-bordered text-center">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">N°ID</th>
+          <th scope="col">Titre prestation</th>
+          <th scope="col">Temps de prestation</th>
+          <th scope="col">Lieu de la prestation</th>
+          <th scope="col">Nombre de photos</th>
+          <th scope="col">Prix</th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for prestation in listePrestation %}
+              <tr>
+                  <th scope="row" class="align-middle">{{ prestation.id }}</th>
+                  <td  class="align-middle">{{ prestation.title }}</td>
+                  <td  class="align-middle">{{ prestation.hour }}</td>
+                  <td  class="align-middle">{{ prestation.place }}</td>
+                  <td  class="align-middle">{{ prestation.picturenumber }}</td>
+                  <td  class="align-middle">{{ prestation.price }}</td>
+                  <td>
+                    <a href="{{ path('admin_form_update_prestation', {'idPrestation': prestation.id}) }}" class="btn btn-dark mb-3 align-middle">Modifier</a>
+                    <a href="{{ path('admin_form_delete_prestation', {'idPrestation': prestation.id}) }}" class="btn btn-dark mb-3 align-middle">Supprimer</a>
+                  </td>
+              </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+{% endblock %}
